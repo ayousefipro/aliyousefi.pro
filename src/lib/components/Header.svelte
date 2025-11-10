@@ -1,0 +1,1 @@
+<header><nav><a href="/">خانه</a> | <a href="/about">درباره من</a></nav></header>
