@@ -1,9 +1,14 @@
-<header class="w-full max-w-4xl py-4">
-    	<nav class="flex justify-between items-center">
-    		<a href="/" class="text-2xl font-bold hover:text-gray-300">علی یوسفی پرو</a>
-    		<div>
-    			<a href="/" class="px-3 py-2 hover:bg-blue-700 rounded-md">خانه</a>
-    			<a href="/about" class="px-3 py-2 hover:bg-blue-700 rounded-md">درباره من</a>
-    		</div>
-    	</nav>
-    </header>
+<header class="w-full py-6 md:max-w-5xl">
+	<nav class="flex items-center justify-between px-4">
+		<!-- بخش لوگو یا نام شما -->
+		<a href="/" class="text-xl font-bold transition-colors hover:text-accent">
+			علی یوسفی
+		</a>
+
+		<!-- بخش لینک‌های منو -->
+		<div class="flex items-center gap-x-6 text-sm">
+			<a href="/" class="transition-colors hover:text-accent">خانه</a>
+			<a href="/about" class="transition-colors hover:text-accent">درباره من</a>
+		</div>
+	</nav>
+</header>

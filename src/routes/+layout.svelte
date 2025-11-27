@@ -4,10 +4,10 @@
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<div class="layout bg-blue-500 text-white min-h-screen flex flex-col items-center">
-	<Header></Header>
-	<main class="page-content flex-grow w-full -max-w-4x1 px-4 py-8">
-		<slot></slot>
+<div class="flex min-h-screen flex-col items-center bg-primary text-textPrimary">
+	<Header />
+	<main class="w-full flex-grow px-4 py-8 md:max-w-5xl">
+		<slot />
 	</main>
-	<Footer></Footer>
+	<Footer />
 </div>
