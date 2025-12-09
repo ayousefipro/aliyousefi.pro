@@ -6,10 +6,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#003049',     // رنگ هدر / منو / فوتر
-				secondary: '#669BBC',   // رنگ پس زمینه اصلی یا بخش‌ها
-				textPrimary: '#FDF0D5', // رنگ متن‌ها
-				accent: '#780000'       // رنگ hover / انتخاب / لینک‌ها
+				primary: '#003049',
+				secondary: '#669BBC',
+				textPrimary: '#FDF0D5',
+				accent: '#780000'
+			},
+			fontFamily: {
+				serif: ['"Vazirmatn"', '"DM Serif Display"', 'serif'],
+				sans: ['Vazirmatn', 'sans-serif']
 			}
 		}
 	},
