@@ -27,7 +27,7 @@
 
 	<div class="relative h-64 w-64 flex-shrink-0 md:h-80 md:w-80">
 		<div class="h-full w-full rounded-full bg-secondary/20">
-			<img src="src/static/profile-picture.jpg" alt="عکس پروفایل علی یوسفی" class="h-full w-full rounded-full object-cover shadow-lg">
+			<img src="/src/static/profile-picture.jpg" alt="عکس پروفایل علی یوسفی" class="h-full w-full rounded-full object-cover shadow-lg">
 		</div>
 	</div>
 
