@@ -18,7 +18,7 @@
 				>درباره من</a
 			>
 			<a
-				href="mailto:your-email@example.com"
+				href="mailto:a.yousefi.pro@gmail.com"
 				class="transform rounded-lg border-2 border-secondary px-6 py-3 font-bold text-secondary transition-colors hover:bg-secondary hover:text-primary"
 				>تماس با من</a
 			>
