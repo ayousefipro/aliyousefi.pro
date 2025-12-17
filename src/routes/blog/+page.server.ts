@@ -1,30 +1,24 @@
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	// 1. پیدا کردن تمام فایل‌های +page.md در زیرپوشه‌های همین مسیر
-	// import.meta.glob یک ویژگی قدرتمند Vite است
-	const paths = import.meta.glob('./*/+page.md', { eager: true });
+	// از import.meta.glob برای پیدا کردن تمام فایل‌های .md در پوشه posts استفاده می‌کنیم
+	const modules = import.meta.glob('/src/lib/posts/*.md');
 
-	const posts = [];
+	const posts = await Promise.all(
+		Object.entries(modules).map(async ([path, resolve]) => {
+			const { metadata } = (await resolve()) as { metadata: any };
+			// نام فایل را از مسیر استخراج می‌کنیم (بدون پسوند .md)
+			const slug = path.split('/').pop()?.slice(0, -3);
 
-	for (const path in paths) {
-		const file = paths[path];
-		// مسیر چیزی شبیه "./first-post/+page.md" است
-		// ما نام پوشه (first-post) را به عنوان اسلاگ (Slug) استخراج می‌کنیم
-		const slug = path.split('/')[1];
-
-		if (file && typeof file === 'object' && 'metadata' in file && slug) {
-			const metadata = file.metadata as any;
-			
-			posts.push({
+			return {
 				slug,
-				title: metadata.title || slug, // اگر عنوانی نبود، نام پوشه را نشان بده
+				title: metadata.title || slug,
 				date: metadata.date || 'تاریخ نامشخص'
-			});
-		}
-	}
+			};
+		})
+	);
 
-	// مرتب‌سازی پست‌ها بر اساس تاریخ (از جدید به قدیم)
+	// مقالات را بر اساس تاریخ، از جدید به قدیم مرتب می‌کنیم
 	const sortedPosts = posts.sort((a, b) => {
 		return new Date(b.date).getTime() - new Date(a.date).getTime();
 	});
